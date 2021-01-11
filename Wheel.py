@@ -1,9 +1,9 @@
+# Originally made by Nica (ncai@rrc.ca)
+# Modified "reportDistance(self)" part by Jungwon for the determine the direction and distance.
+
 import pigpio
 import time
 import math
-
-# Modified "reportDistance(self)" part by Jungwon for the determine the direction and distance.
-
 
 class Wheel:
     """
@@ -133,8 +133,8 @@ class Wheels:
             self.new_loc = (self.route[-1][0][0], self.route[-1][0][1])
             delta_left = self.new_loc[0] - self.last_loc[0]
             delta_right = self.new_loc[1] - self.last_loc[1]
-            delta_angle = (-self.facing + self.last_facing) #*-1  # 1119
-            distance = (delta_left + delta_right)/2 # Modified the distance calculation
+            delta_angle = (-self.facing + self.last_facing) 
+            distance = (delta_left + delta_right)/2    # Modified the distance calculation
             self.last_loc = self.new_loc
             self.last_facing = self.facing
         return distance, delta_angle
